@@ -33,7 +33,7 @@ mongoose.connect(config.MONGODB_URI, { serverSelectionTimeoutMS: 5000 })
   });
 
 // Soporte para enrutamiento del lado del cliente (React Router SPA)
-app.get('*', (req, res) => {
+app.get('/*', (req, res) => {
   res.sendFile(__dirname + '/public/index.html');
 });
 
