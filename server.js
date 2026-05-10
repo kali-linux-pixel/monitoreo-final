@@ -1,3 +1,6 @@
+process.on('uncaughtException', (err) => { console.error('🚨 CRITICAL UNCAUGHT ERROR:', err); });
+process.on('unhandledRejection', (reason, promise) => { console.error('🚨 UNHANDLED REJECTION:', reason); });
+
 const express = require('express');
 const app = express();
 const mongoose = require('mongoose');
@@ -170,7 +173,7 @@ server.listen(config.PORT, () => {
   ║   Servidor corriendo en:              ║
   ║   http://localhost:${config.PORT}         ║
   ║                                       ║
-  ║   Versión: ${require('./package.json').version}                   ║
+  ║   Versión: 1.0.0                   ║
   ║   Entorno: ${config.NODE_ENV}            ║
   ╚═══════════════════════════════════════╝
   `);
