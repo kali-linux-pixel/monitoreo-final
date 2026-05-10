@@ -1,0 +1,14 @@
+services:
+  - type: web
+    name: monitoreo-app
+    env: node
+    plan: free
+    buildCommand: npm install && npm run build
+    startCommand: node server.js
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: MONGODB_URI
+        value: "Reemplaza_Con_Tu_Cadena_Conexion_De_MongoDB_Atlas"
+      - key: LOG_LEVEL
+        value: info
